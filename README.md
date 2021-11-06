@@ -1,2 +1,2 @@
-# epic-init
-init that is very epic 
+# ProjectMaker
+Making projects now in a breeze

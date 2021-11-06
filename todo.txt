@@ -1,0 +1,27 @@
+[] Git or no git {Y/n}
+	if no git 
+		all execpt {Host online or not}
+[] Location {text (autocompletion)}
+[] Host online or not {Y/n}
+	if Host
+		[] Login Details {text}
+		[] Save details or not {Y/n}
+			if save 
+				[] save depending on OS
+		[] .gitignore or not 
+			if .gitignore {text autocompletion}
+				[] language
+		[] Licence or not 
+			if licence {TUI}
+			 	[] Licence name
+		[] Readme or not
+			if Readme {text}
+				[] Readme generator
+[] Start now or not
+	if start now {Y/n}
+		[] Clone repo in {Location}
+	else 
+		[] exit
+[] Editor of choice {text}
+	(Open in editor of choice)
+
