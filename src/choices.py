@@ -42,4 +42,4 @@ if __name__ == "__main__":
     x.location()
     x.host_online()
     x.start_now()
-    print(x._value())
+
