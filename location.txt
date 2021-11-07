@@ -1,0 +1,19 @@
+1) Check wheter the path is a dir
+2) If path not found:
+	1) create 
+	    or
+	2) exit
+3) If location in a path with no write access:
+	1) Warn 
+	2) ask passwd
+		1)enter passwd 
+			1) Check passwd 
+				if wrong:
+					1) give 3 tries to enter passwd 
+						if tries > 3:
+							1) exit
+		    or
+		2)re enter path 
+		    or
+		3) exit
+4) Pass on the _correct_ path to `git`

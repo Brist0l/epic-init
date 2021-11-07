@@ -1,0 +1,7 @@
+1) Location 
+2) git 
+3) Host online
+4) Start rn 
+if 4:
+	5) editor of choice
+
