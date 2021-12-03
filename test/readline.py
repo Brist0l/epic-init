@@ -1,4 +1,4 @@
 import readline
 
 input(">")
-readline.insert_text("sex")
+readline.insert_text()
