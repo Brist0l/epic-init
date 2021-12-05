@@ -13,23 +13,26 @@ class Order:
         #( 0  ,    1     ,       2     ,      3   )
         #(Git , Location , host_online , start_now)
 
-        self.values = ()
+        self.values = None 
         print(f"{self.true}[+]All Files Present" if route.Route().file_check() else "{self.false}[-]All Files Are Not Present")
         
 
     def get_choices(self):
-        x=choices.Choice()
+        x = choices.Choice()
         x.git()
         x.location()
         x.host_online()
         x.start_now()
+        x.editor()
         self.values = x.get_value()
-    
+        print(f"{colorama.Fore.YELLOW} These are the values:")
+        for i in self.values.keys():
+            print(f"{i}: {self.values.get(i)}")
+
     def location(self):
        location.Location(self.values[1]) 
-
     
 x=Order()
 x.get_choices()
-x.get_value()
+#x.get_value()
 

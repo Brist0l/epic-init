@@ -23,7 +23,7 @@ class Location:
     def create_path(self):
         if self.check_dir() is False:
             print(f"{self.errors}[-] Folder Does not exist !")
-            dir_make=input(f"{self.quesion}Do You Want To Create The Directory? :")
+            dir_make = input(f"{self.quesion}Do You Want To Create The Directory? :")
             if dir_make not in self.yes:
                 sys.exit(f"{colorama.Fore.CYAN}ThankYou for using epic-init")   
             print(f"{self.paragraphs}[+] Creating Directory {self.hints}{self.dir}")
@@ -36,4 +36,5 @@ class Location:
                 print(f"[-]Error : {self.errors}{error}{colorama.Fore.RESET} occured.")
                           
         
-Location("/root/hello").create_path()
+if __name__ == "__main__": 
+    Location("/root/hello").create_path()
