@@ -2,6 +2,7 @@ import os
 import colorama
 import sys
 import getpass
+import subprocess
 
 class Location:
     def __init__(self,directory:str):
@@ -32,8 +33,9 @@ class Location:
             except PermissionError:
                 print(f"{self.errors}[-] Error With Permisions.")
                 print(f"{self.paragraphs} Root Password Would Be Needed.")
+                
+
             except OSError as error:
-                print(f"[-]Error : {self.errors}{error}{colorama.Fore.RESET} occured.")
-                          
+                sys.exit(f"[-]Error : {self.errors}{error}{colorama.Fore.RESET} occured.") 
         
 Location("/root/hello").create_path()
