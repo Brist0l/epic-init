@@ -33,10 +33,23 @@ class Location:
             except PermissionError:
                 print(f"{self.errors}[-] Error With Permisions.")
                 print(f"{self.paragraphs} Root Password Would Be Needed.")
+                x =input(f"{self.quesion}Do You Want Still Want To Continue? :")
+                if x not in self.yes:
+                    sys.exit("ThankYou For Using Epic Init")
                 
-
+                self.create_path_root()
+        
             except OSError as error:
                 sys.exit(f"[-]Error : {self.errors}{error}{colorama.Fore.RESET} occured.") 
-        
+    
+    def choose_user(self):
+        x=input("Enter Username To Which You Want To Swtich:")        
+            
+
+    def create_path_root(self):
+        user=input(f"User:{getpass.getuser()}\n Do You Want To Continue As {self.hints}{getpass.getuser()}?")
+        if user not in self.yes:
+            self.choose_user()            
+
 if __name__ == "__main__": 
     Location("/root/hello").create_path()
