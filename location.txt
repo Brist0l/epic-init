@@ -4,8 +4,9 @@
 	    or
 	2) exit
 3) If location in a path with no write access:
-	1) Warn 
-	2) ask passwd
+	1) Warn
+	2) Ask User Name 
+	3) ask passwd
 		1)enter passwd 
 			1) Check passwd 
 				if wrong:
