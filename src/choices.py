@@ -32,11 +32,7 @@ class Choice:
             print(f"\n{self.hints}Hint: Press {colorama.Fore.RED}Tab{colorama.Fore.GREEN} for autocompletion.")
             #readline.set_completer(autocomplete.MyCompleter([x for x in os.listdir(f"/home/{getpass.getuser()}")]).complete)
             #readline.parse_and_bind('tab: complete')
-            while True:
-                self.path = input(f"{self.question}Enter Location of project:{self.reset} ")
-                if os.path.isdir(self.path): return
-                else:
-                    print(f"{self.red}That path doesn't exist; Please enter the correct path{self.reset}")
+            self.path = input(f"{self.question}Enter Location of project:{self.reset} ")
    
     def host_online(self) -> None:
         if not input(f"\n{self.question}Do You Want To Host It Online (Github) ? (Y/n){self.reset} ") in self.yes:
@@ -75,4 +71,6 @@ class Choice:
             "startNow": self._start_now,
             "editor": self._editor_exec
         }
+
+
 

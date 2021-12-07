@@ -30,6 +30,7 @@ class Location:
             print(f"{self.paragraphs}[+] Creating Directory {self.hints}{self.dir}")
             try:
                 os.mkdir(self.dir)
+                print(f"{self.paragraphs}[+]Folder Made")
             except PermissionError:
                 print(f"{self.errors}[-] Error With Permisions.")
                 print(f"{self.paragraphs}Root Password Would Be Needed.")
@@ -41,15 +42,22 @@ class Location:
         
             except OSError as error:
                 sys.exit(f"[-]Error : {self.errors}{error}{colorama.Fore.RESET} occured.") 
+            return 0
     
-
     def create_path_root(self):
         print(f"User:{getpass.getuser()}")
         passwd=getpass.getpass(f"{self.quesion}Enter Root Password >")
-        x=subprocess.Popen(f"sudo -S mkdir {self.dir}",stdin=subprocess.PIPE,shell=True)
+        x=subprocess.Popen(f"sudo -S mkdir -p {self.dir}",stdin=subprocess.PIPE,shell=True)
         x.stdin.write(bytes(passwd,encoding="utf-8"))
         x.stdin.flush()
         print(f"{self.paragraphs}[+]Folder Made")
+        return 0
+
+    def get_path(self):
+        if self.create_path() or self.create_path_root():
+            return self.dir
+        else:
+            print(f"{self.errors}[-]Error In Loations")
 
 if __name__ == "__main__": 
-    Location("/root/hello").create_path()
+    Location("/something/of/maa").create_path()
