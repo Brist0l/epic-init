@@ -1,3 +1,4 @@
+Write To file before anything
 1) Location 
 2) git 
 3) Host online

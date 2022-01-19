@@ -1,0 +1,3 @@
+Follow the philosophy of UNIX i.e. use files for communication
+
+will be stored in ~/.cache/epic/vals.json

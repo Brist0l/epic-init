@@ -31,5 +31,4 @@ class Order:
     
 x=Order()
 x.get_choices()
-#x.get_value()
 

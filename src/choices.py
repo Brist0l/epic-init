@@ -35,8 +35,9 @@ class Choice:
             self.path = input(f"{self.question}Enter Location of project:{self.reset} ")
    
     def host_online(self) -> None:
-        if not input(f"\n{self.question}Do You Want To Host It Online (Github) ? (Y/n){self.reset} ") in self.yes:
-            self._host_online = False
+        if self.use_git == True:
+            if not input(f"\n{self.question}Do You Want To Host It Online (Github) ? (Y/n){self.reset} ") in self.yes:
+                self._host_online = False
     
     def start_now(self) -> None:
         if not input(f"\n{self.question}Do You Want To Start Now ? (Y/n){self.reset} ") in self.yes:
@@ -71,6 +72,5 @@ class Choice:
             "startNow": self._start_now,
             "editor": self._editor_exec
         }
-
 
 
