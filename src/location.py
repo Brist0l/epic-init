@@ -16,17 +16,17 @@ class Location:
         self.errors = colorama.Fore.RED
         self.paragraphs = colorama.Fore.LIGHTBLUE_EX
 
-        self.yes = ["","y","Y","Yes","yes","ha bancho"]
+        self.yes = ["","y","Y","Yes","yes"]
 
-    def check_dir(self):
+    def _check_dir(self):
         return True if os.path.isdir(self.dir) else False
 
     def create_path(self):
-        if self.check_dir() is False:
+        if self._check_dir() is False:
             print(f"{self.errors}[-] Folder Does not exist !")
             dir_make = input(f"{self.quesion}Do You Want To Create The Directory? :")
             if dir_make not in self.yes:
-                sys.exit(f"{colorama.Fore.CYAN}ThankYou for using epic-init")   
+                sys.exit(f"{colorama.Fore.CYAN}Thankyou for using epic-init")   
             print(f"{self.paragraphs}[+] Creating Directory {self.hints}{self.dir}")
             try:
                 os.mkdir(self.dir)
@@ -38,13 +38,13 @@ class Location:
                 if x not in self.yes:
                     sys.exit("ThankYou For Using Epic Init")
                 
-                self.create_path_root()
+                self._create_path_root()
         
             except OSError as error:
                 sys.exit(f"[-]Error : {self.errors}{error}{colorama.Fore.RESET} occured.") 
             return 0
     
-    def create_path_root(self):
+    def _create_path_root(self):
         print(f"User:{getpass.getuser()}")
         passwd=getpass.getpass(f"{self.quesion}Enter Root Password >")
         x=subprocess.Popen(f"sudo -S mkdir -p {self.dir}",stdin=subprocess.PIPE,shell=True)
@@ -54,10 +54,10 @@ class Location:
         return 0
 
     def get_path(self):
-        if self.create_path() or self.create_path_root():
+        if self.create_path() or self._create_path_root():
             return self.dir
         else:
-            print(f"{self.errors}[-]Error In Loations")
+            print(f"{self.errors}[-]Error In Locations")
 
 if __name__ == "__main__": 
     Location("/something/of/maa").create_path()

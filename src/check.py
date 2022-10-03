@@ -1,8 +1,8 @@
-import colorama, subprocess
+import subprocess
 
 class Check:
     def __init__(self) -> None:
-        self.yes = ["","y","Y","Yes","yes","ha bancho"]
+        self.yes = ["","y","Y","Yes","yes"]
         self.editors = {
             "vim": ["vim", "vi improved"],
             "nvim": ["nvim", "neovim", "neo vim"],
