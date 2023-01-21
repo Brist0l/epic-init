@@ -1,4 +1,4 @@
-[] Git or no git {Y/n}
+[x] Git or no git {Y/n}
 	if no git 
 		all execpt {Host online or not}
 [] Location {text (autocompletion)}

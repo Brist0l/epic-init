@@ -32,6 +32,8 @@ class Choice:
             print(f"{self.hints}[+] Git Present")
         else:
             print(f"{self.red}[-] Git Not Found!")
+            if not input("{self.question}Do You Want To Install It?(Y/n): {self.reset}") in self.yes:
+                
             self.use_git = False
    
     def location(self):

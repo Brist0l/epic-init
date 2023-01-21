@@ -1,7 +1,7 @@
 import subprocess
 
 class Check:
-    def __init__(self) -> None:
+    def __init__(self):
         self.yes = ["","y","Y","Yes","yes"]
         self.editors = {
             "vim": ["vim", "vi improved"],
@@ -11,15 +11,16 @@ class Check:
             "codium": ["codium", "vscodium"]
         }
 
-    def checkGit(self) -> bool:
+    def checkGit(self):
         return subprocess.check_output(["git", "--version"]).decode()[0:3] == "git"
 
-    def checkEditor(self, editor:str) -> str:
+    def checkEditor(self, editor:str):
         for i in self.editors.values():
             if editor in i:
                 return i[0]
         else:
             return "unknown editor"
+        
 
 if __name__ == "__main__":
    chk = Check()

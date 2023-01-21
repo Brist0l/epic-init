@@ -1,4 +1,0 @@
-[] Check if Git is there
-	if not:
-		[]install it
-
